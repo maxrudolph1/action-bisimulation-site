@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Learning Action-based Representations Using
+        Invariance">
+  <meta name="keywords" content="Bisimulation, Reinforcement Learning, robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <title>Learning Action-based Representations Using
+    Invariance</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://maxrudolph1.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://sites.google.com/view/cap-comm">
+            Generalization in Heterogeneous Multi-robot Systems
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Learning Action-based Representations Using
+            Invariance</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://maxrudolph1.github.io/">Max Rudolph</a><sup>*,1</sup>,</span>
+            <span class="author-block">
+              <a href="http://calcharles.github.io/">Caleb Chuck</a><sup>*,1</sup>,</span>
+            <span class="author-block">
+              <a href="https://kevin.black/">Kevin Black</a><sup>*,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://apple.com">Misha Lvovsky</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.cs.umass.edu/~sniekum/">Scott Niekum</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://amyzhang.github.io//">Amy Zhang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Texas at Austin</span>
+            <span class="author-block"><sup>2</sup>University of California, Berkeley</span>
+            <span class="author-block"><sup>3</sup>University of Massachusetts Amherst</span>
+
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2403.16369"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.16369"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Three Sentence Story</h2>
+        <div class="content has-text-justified">
+          Reinforcement learning from high-dimensional obsevation is difficult because agents must identify relevant state features amidst many distractors. 
+          We introduce action-bisimulation encoding, a method that learns a multi-step controllability metric that smoothly discounts distant state features that are relevant for control. 
+          We demonstrate that action-bisimulation pretraining on reward-free, uniformly random data improves sample efficiency in several environments, including a photorealistic 3D simulation domain, Habitat.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Robust reinforcement learning agents using high-dimensional observations must be able to identify relevant state features amidst many exogeneous distractors. 
+          A representation that captures <i>controllability</i> identifies these state elements by determining what affects agent control. While methods such as inverse dynamics and mutual information capture controllability for a limited number of timesteps, capturing long-horizon elements remains a challenging problem. Myopic controllability can capture the moment right before an agent crashes into a wall, but not the control-relevance of the wall while the agent is still some distance away. To address this we introduce <i>action-bisimulation encoding</i>, a method inspired by the bisimulation invariance pseudometric, that extends single-step controllability with a recursive invariance constraint.
+          By doing this, action-bisimulation learns a multi-step controllability metric that smoothly discounts distant state features that are relevant for control. We demonstrate that action-bisimulation pretraining on reward-free, uniformly random data improves sample efficiency in several environments, including a photorealistic 3D simulation domain, Habitat.
+          Additionally, we provide theoretical analysis and qualitative results demonstrating the information captured by action-bisimulation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation and Illustrative example</h2>
+        <p>
+        <div class="content">
+          <img src="./static/images/bisim_latent_space.png"
+          class="interpolation-image"
+          alt="latent space."/>
+          In this work, we are motivated by the problem of learning representations that are useful for control in reinforcement learning. 
+          Some features of an environment (like the background color or obstacles behind the barrier in the left two images) are irrelevant to the agent's control, while others (like obstacles near the agent in the right two images) are crucial.
+          We propose a method that learns an encoder \(\phi\) that maps observations into an embedding space where distance corresponds to control relevant differences between the observations.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How?</h2>
+          <h2 class="title is-3">Constructing Control-Relevant Embeddings</h2>
+          <h3 class="title is-4">Bisimulation Distance</h3>
+          <p>
+            The bisimulation distance is built from 1) a base-case that defines the distance between two states at a time-horizon of \(T=1\) and 2) a recursive distance that bootstraps the base-case into a discounted infinite horizon. The combination of these two cases form a multi-step representation of controllablility.
+            \[d_\text{a-bisim}(s_i, s_j, \psi_\theta, \phi_\eta) =  (1-c)\cdot\|\psi_\theta(s_i) - \psi_\theta(s_j)\|_1 
+            + c \cdot \mathbb{E}_{a\sim U(\mathcal A)} \left[ W_1(f(\phi_\eta(s_i), a), f(\phi_\eta(s_j), a)) \right],\]
+            where \(W_1\) is the 1-Wasserstein distance, \(c\) is a scalar hyperparameter that weights the importance of future states, and \(f(\cdot, \cdot)\) is a learned forward dynamics function over the latent space. The function \(\psi\) is the learned base base representation defined in the next section. 
+          </p>
+          
+          <h3 class="title is-4">Base case Distance</h3>
+          To form the single-step base case space on which the bisimulation representation is built, we utilize an inverse dynamics objective. By performing inverse dynamics on a minimally learned representation, it captures any information in the observation relevant to predicting an action taken between states.
+          \[L_{ss}(\mathcal D, \theta, \nu) = -\sum_{(s,a,s')\sim \mathcal D}\log f_{\nu,\text{inverse}}(a|\psi_\theta(s), \psi_\theta(s')) + \beta \left(\|\psi_\theta(s)\|_1 + \|\psi_\theta(s')\|_1\right),\]
+          <h3 class="title is-4">Learning the distance</h3>
+          We train an encoder \(\phi_\nu\) such that the embedded distance between states \(s_i\) and \(s_j\) is equal to the action-bisimulation distance. We optimize the following loss:
+            \[L(\mathcal D) = \frac{1}{N}\sum_{s_i,s_j\sim \mathcal D}\left|\|\phi_\eta(s_i) - \phi_\eta(s_j)\|_1 - d_\text{a-bisim}(s_i, s_j, \psi, \phi)\right|.\]
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation and Illustrative example</h2>
+        <p>
+        <div class="content">
+          <img src="./static/images/bisim_results.png"
+          class="interpolation-image"
+          alt="latent space."/>
+          In this work, we are motivated by the problem of learning representations that are useful for control in reinforcement learning. 
+          Some features of an environment (like the background color or obstacles behind the barrier in the left two images) are irrelevant to the agent's control, while others (like obstacles near the agent in the right two images) are crucial.
+          We propose a method that learns an encoder \(\phi\) that maps observations into a latent spaces where distance corresponds to control relevant differences between the observations.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation and Illustrative example</h2>
+        <p>
+        <img src="./static/images/bisim_results.png"
+          class="interpolation-image"
+          alt="bisimulation qualitative results."/>
+        We show that the action-bisimulation learns effective and useful representaitons for reinforcement learning tasks. Firstly, we demonstrate qualitatively that the Action-Bisimulation encoder can smoothly capture control-relecant inforamation
+      </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{rudolph2024learning,
+  author    = {Rudolph, Max and Chuck, Caleb and Black, Kevin and Lvovsky, Misha and Niekum, Scott and Zhang, Amy},
+  title     = {Learning Action-based Representations Using
+    Invariance},
+  journal   = {Reinforcement Learning Conference 2024 (RLC 2024)},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p>
+            Website based on <a href="https://github.com/keunhong">Keun Hong's</a> Nerfies <a
+              href="https://github.com/nerfies/nerfies.github.io">website</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+</body>
+</html>
